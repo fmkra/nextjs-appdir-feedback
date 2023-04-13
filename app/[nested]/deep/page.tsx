@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { getData } from '../fetchdata'
+import { getData } from '../../fetchdata'
 
 export async function generateMetadata() {
     const data = await getData()
     return {
-        title: 'Nested page ' + data,
+        title: 'Deep nested page ' + data,
     }
 }
 
@@ -13,9 +13,8 @@ export default async function NestedPage() {
 
     return (
         <div>
-            <p>Nested {data}</p>
-            <Link href="/nested/deep">Go to deep nested</Link>
-            <Link href="/">Go back</Link>
+            <p>Deep nested {data}</p>
+            <Link href="/nested">Go back</Link>
         </div>
     )
 }
